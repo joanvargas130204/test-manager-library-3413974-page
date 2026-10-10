@@ -1,39 +1,25 @@
-# test-manager-library-3413974-page
-> **Prueba técnica · Ficha ADSO 3413974**  
-> Sitio público estático de presentación informativa para Manager Library.
+# Manager Library: sitio público
 
----
+Landing estática (HTML5, CSS3 y JavaScript vanilla). No usa frameworks, build ni npm, y **no llama a ninguna API**.
 
-## 📖 Descripción y Arquitectura
+## Abrirlo
+- Doble clic en `index.html`, o
+- servirlo estático: `python -m http.server 8080` y abrir http://localhost:8080
 
-Landing page informativa, visual y totalmente accesible diseñada bajo las directrices del proyecto:
-- **Cero acoplamiento con la API:** Cumple estrictamente la regla de oro de la especificación; es un sitio estático puro (HTML5 + CSS3 + Vanilla JS) sin llamadas HTTP ni consumo de endpoints internos.
-- **Mobile First y Responsive:** Diseño adaptado con media queries para móviles (< 768px), tablets y pantallas de escritorio.
-- **Accesibilidad (A11y):** HTML semántico (`header`, `main`, `section`, `article`, `footer`), contraste verificado WCAG AA, `aria-expanded` y `aria-label` en navegación interactiva.
-
----
-
-## 🚀 Cómo Visualizar la Página
-
-### 1. Apertura directa (Doble Clic)
-Puedes abrir el archivo [`index.html`](index.html) directamente con doble clic en tu explorador de archivos (`file:///...`). No requiere servidor web, Node.js ni compilador.
-
-### 2. Con Servidor Local (Opcional)
-```bash
-# Con extensión Live Server en VS Code o npx serve:
-npx serve .
+## Configurar el enlace a la aplicación
+En `index.html`, un solo lugar:
+```html
+<meta name="app-url" content="http://localhost:5173">
 ```
+El botón "Ir a la aplicación" toma esa URL. Es solo un enlace; la landing no depende de la API.
 
-### 3. Publicación en GitHub Pages
-1. Ve a **Settings > Pages** en este repositorio de GitHub.
-2. En **Build and deployment > Branch**, selecciona `main` y carpeta `/ (root)`.
-3. Haz clic en **Save** y la página estará disponible en la URL pública de GitHub Pages.
+## Formulario de contacto
+Es **demostrativo**: valida en el navegador y muestra un mensaje de éxito, pero no envía datos a ningún servidor.
 
----
+## Publicar en GitHub Pages
+1. Sube estos archivos a la rama `main` del repo `page`.
+2. En Settings > Pages, elige "Deploy from a branch", rama `main`, carpeta `/ (root)`.
+3. La página queda en `https://<usuario>.github.io/test-manager-library-3413974-page/`.
 
-## 📋 Contenido de las Secciones
-1. **Hero Principal:** Título y llamado a la acción.
-2. **Servicios Bibliotecarios:** Préstamo domiciliario, salas de lectura y asesoría.
-3. **Reglamento y Socios:** Visibiliza las reglas del modelo de negocio (máx. 3 libros por socio, 14 días calendario, política cero mora y registro presencial).
-4. **Catálogo de Muestra:** Muestra representativa de títulos fijos escritos a mano en el HTML.
-5. **Horarios y Ubicación:** Información operativa de atención ciudadana.
+## Contenido de muestra que debes reemplazar
+Correo, teléfono, dirección, horarios, categorías y libros destacados.

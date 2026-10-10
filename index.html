@@ -1,259 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal público oficial de Manager Library. Conoce nuestros servicios bibliotecarios, políticas de préstamos y colecciones destacadas.">
-  <title>Manager Library · Portal Público de la Comunidad</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manager Library | Biblioteca pública</title>
+  <meta name="description" content="Manager Library: consulta libros destacados, conoce las reglas de préstamo, horarios de atención y cómo asociarte a la biblioteca.">
+  <!-- Único lugar para configurar el enlace a la aplicación interna (repo app). Solo es un enlace, no hay llamadas a la API. -->
+  <meta name="app-url" content="http://localhost:5173">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <!-- Navegación y Encabezado -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="#inicio" class="logo" aria-label="Manager Library inicio">
-        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
-          <path d="M6 6h10"></path>
-          <path d="M6 10h10"></path>
-        </svg>
-        <span>Manager Library</span>
+  <header class="site-header" id="inicio-top">
+    <div class="site-header__inner">
+      <a class="brand" href="#inicio" aria-label="Manager Library, ir al inicio">
+        <img class="brand__logo" src="assets/img/logo.svg" width="36" height="36" alt="">
+        <span class="brand__name">Manager Library</span>
       </a>
-
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="nav-toggle__label">Menú</span>
       </button>
-
-      <nav id="nav-menu" class="nav-menu" aria-label="Navegación principal">
-        <ul class="nav-list">
-          <li><a href="#inicio" class="nav-link">Inicio</a></li>
-          <li><a href="#servicios" class="nav-link">Servicios</a></li>
-          <li><a href="#reglamento" class="nav-link">Reglamento y Socios</a></li>
-          <li><a href="#destacados" class="nav-link">Libros de Muestra</a></li>
-          <li><a href="#horarios" class="nav-link">Horarios</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#servicios">Servicios</a></li>
+          <li><a class="nav__link" href="#libros">Libros</a></li>
+          <li><a class="nav__link" href="#asociarse">Asociarse</a></li>
+          <li><a class="nav__link" href="#horarios">Horarios</a></li>
+          <li><a class="nav__link" href="#contacto">Contacto</a></li>
+          <li><a class="btn btn--brass btn--small" href="#" data-app-link>Ir a la aplicación</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-      <div class="container hero-container">
-        <span class="badge">Portal Oficial de la Comunidad</span>
-        <h1 class="hero-title">Espacio Público de Lectura, Cultura y Aprendizaje</h1>
-        <p class="hero-subtitle">
-          Promovemos el acceso democrático a la cultura y la investigación. Descubre nuestra colección literaria, consulta en sala y solicita préstamos para disfrutar en casa.
-        </p>
-        <div class="hero-actions">
-          <a href="#reglamento" class="btn btn-primary">Cómo Solicitar Libros</a>
-          <a href="#destacados" class="btn btn-outline">Ver Colecciones</a>
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title" id="hero-titulo">Lee más, devuelve a tiempo, vuelve cuando quieras.</h1>
+          <p class="hero__lead">Manager Library presta libros a sus socios con reglas claras: hasta tres libros a la vez y catorce días para leerlos.</p>
+          <div class="hero__actions">
+            <a class="btn btn--brass" href="#libros">Ver libros destacados</a>
+            <a class="btn btn--ghost" href="#asociarse">Cómo asociarme</a>
+          </div>
+        </div>
+        <aside class="loan-card" aria-label="Resumen de préstamo">
+          <p class="loan-card__title">Ficha de préstamo</p>
+          <dl class="loan-card__list">
+            <div class="loan-card__row"><dt>Libros por socio</dt><dd>3</dd></div>
+            <div class="loan-card__row"><dt>Plazo de devolución</dt><dd>14 días</dd></div>
+            <div class="loan-card__row"><dt>Con préstamo vencido</dt><dd>sin nuevos préstamos</dd></div>
+          </dl>
+          <p class="loan-card__foot">Devuelve cada libro por separado, sin esperar a los demás.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="servicios" aria-labelledby="servicios-titulo">
+      <div class="container">
+        <h2 class="section__title" id="servicios-titulo">Lo que encuentras aquí</h2>
+        <p class="section__intro">Servicios pensados para quien viene a leer, estudiar o buscar un libro concreto.</p>
+        <ul class="services">
+          <li class="service">
+            <h3 class="service__title">Préstamo a domicilio</h3>
+            <p>Llévate hasta tres libros por 14 días con tu registro de socio.</p>
+          </li>
+          <li class="service">
+            <h3 class="service__title">Consulta en sala</h3>
+            <p>Lee en el sitio, sin necesidad de ser socio y sin límite de tiempo dentro del horario.</p>
+          </li>
+          <li class="service">
+            <h3 class="service__title">Catálogo por categorías</h3>
+            <p>Novela, ciencia, historia, tecnología e infantil, organizados para encontrar rápido.</p>
+          </li>
+          <li class="service">
+            <h3 class="service__title">Asesoría de lectura</h3>
+            <p>Cuéntanos qué te gusta y te sugerimos por dónde empezar.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="libros" aria-labelledby="libros-titulo">
+      <div class="container">
+        <h2 class="section__title" id="libros-titulo">Libros destacados</h2>
+        <p class="section__intro">Una muestra de nuestro catálogo. El inventario real se consulta en la aplicación.</p>
+
+        <div class="filters" role="group" aria-label="Filtrar libros por categoría">
+          <button class="chip is-active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="chip" type="button" data-filter="Novela" aria-pressed="false">Novela</button>
+          <button class="chip" type="button" data-filter="Ciencia" aria-pressed="false">Ciencia</button>
+          <button class="chip" type="button" data-filter="Historia" aria-pressed="false">Historia</button>
+          <button class="chip" type="button" data-filter="Tecnología" aria-pressed="false">Tecnología</button>
+          <button class="chip" type="button" data-filter="Infantil" aria-pressed="false">Infantil</button>
+        </div>
+        <p class="filters__status" id="filtro-estado" role="status" aria-live="polite"></p>
+
+        <ul class="books" id="lista-libros">
+          <li class="book" data-category="Novela"><h3 class="book__title">Cien años de soledad</h3><p class="book__author">Gabriel García Márquez</p><p class="book__tag">Novela</p></li>
+          <li class="book" data-category="Novela"><h3 class="book__title">Pedro Páramo</h3><p class="book__author">Juan Rulfo</p><p class="book__tag">Novela</p></li>
+          <li class="book" data-category="Ciencia"><h3 class="book__title">Breve historia del tiempo</h3><p class="book__author">Stephen Hawking</p><p class="book__tag">Ciencia</p></li>
+          <li class="book" data-category="Ciencia"><h3 class="book__title">Cosmos</h3><p class="book__author">Carl Sagan</p><p class="book__tag">Ciencia</p></li>
+          <li class="book" data-category="Historia"><h3 class="book__title">Sapiens</h3><p class="book__author">Yuval Noah Harari</p><p class="book__tag">Historia</p></li>
+          <li class="book" data-category="Historia"><h3 class="book__title">Las venas abiertas de América Latina</h3><p class="book__author">Eduardo Galeano</p><p class="book__tag">Historia</p></li>
+          <li class="book" data-category="Tecnología"><h3 class="book__title">Código limpio</h3><p class="book__author">Robert C. Martin</p><p class="book__tag">Tecnología</p></li>
+          <li class="book" data-category="Infantil"><h3 class="book__title">El principito</h3><p class="book__author">Antoine de Saint-Exupéry</p><p class="book__tag">Infantil</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="asociarse" aria-labelledby="asociarse-titulo">
+      <div class="container split">
+        <div>
+          <h2 class="section__title" id="asociarse-titulo">Cómo asociarte</h2>
+          <ol class="steps">
+            <li>Ven a la biblioteca con tu documento de identidad.</li>
+            <li>Registra tus datos en el mostrador. Cada documento se registra una sola vez.</li>
+            <li>Elige hasta tres libros y llévatelos por 14 días.</li>
+          </ol>
+          <a class="btn btn--green" href="#contacto">Resolver una duda</a>
+        </div>
+        <div class="rules">
+          <h3 class="rules__title">Reglas de préstamo</h3>
+          <ul class="rules__list">
+            <li><strong>Máximo 3 libros</strong> por socio al mismo tiempo, contando los que aún no has devuelto.</li>
+            <li><strong>Plazo de 14 días</strong> desde el día del préstamo.</li>
+            <li><strong>Bloqueo por mora:</strong> si tienes un libro vencido, no puedes pedir otro hasta devolverlo.</li>
+            <li><strong>Un ejemplar por título</strong> en cada préstamo, y solo si hay ejemplares disponibles.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="section">
+    <section class="section section--alt" id="horarios" aria-labelledby="horarios-titulo">
       <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Atención al Ciudadano</span>
-          <h2 class="section-title">Servicios Bibliotecarios Gratuitos</h2>
-          <p class="section-desc">Diseñados para investigadores, estudiantes y apasionados por las letras en todas las etapas.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card service-card">
-            <div class="service-icon">📖</div>
-            <h3 class="card-title">Préstamo Domiciliario</h3>
-            <p>Retira ejemplares para leer en tu hogar con un proceso ágil. Dispones de hasta 14 días calendario para disfrutar de cada obra.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="service-icon">🏛️</div>
-            <h3 class="card-title">Salas de Lectura y Estudio</h3>
-            <p>Ambientes climatizados y silenciosos equipados con puestos individuales y conectividad para potenciar tu concentración.</p>
-          </article>
-
-          <article class="card service-card">
-            <div class="service-icon">🔍</div>
-            <h3 class="card-title">Asesoría de Búsqueda</h3>
-            <p>Personal bibliotecario especializado para orientarte en la localización de fuentes bibliográficas y referencias académicas.</p>
-          </article>
+        <h2 class="section__title" id="horarios-titulo">Horarios de atención</h2>
+        <p class="section__intro">Horario de muestra, ajústalo al real de la biblioteca.</p>
+        <div class="table-wrap">
+          <table class="hours">
+            <caption class="visually-hidden">Horario semanal</caption>
+            <thead><tr><th scope="col">Día</th><th scope="col">Horario</th></tr></thead>
+            <tbody>
+              <tr data-day="1"><th scope="row">Lunes</th><td>8:00 a. m. a 6:00 p. m.</td></tr>
+              <tr data-day="2"><th scope="row">Martes</th><td>8:00 a. m. a 6:00 p. m.</td></tr>
+              <tr data-day="3"><th scope="row">Miércoles</th><td>8:00 a. m. a 6:00 p. m.</td></tr>
+              <tr data-day="4"><th scope="row">Jueves</th><td>8:00 a. m. a 6:00 p. m.</td></tr>
+              <tr data-day="5"><th scope="row">Viernes</th><td>8:00 a. m. a 6:00 p. m.</td></tr>
+              <tr data-day="6"><th scope="row">Sábado</th><td>9:00 a. m. a 1:00 p. m.</td></tr>
+              <tr data-day="0"><th scope="row">Domingo</th><td>Cerrado</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- Reglamento de Préstamos y Cómo Asociarse -->
-    <section id="reglamento" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Políticas Transparentes</span>
-          <h2 class="section-title">Reglas Clave de Préstamo y Membresía</h2>
-          <p class="section-desc">Nuestro sistema de circulación se rige por normas claras para garantizar el acceso equitativo a todos los usuarios.</p>
+    <section class="section" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container split">
+        <div>
+          <h2 class="section__title" id="contacto-titulo">Escríbenos</h2>
+          <p class="section__intro">Datos de muestra, reemplázalos por los reales.</p>
+          <ul class="contact-list">
+            <li><strong>Correo:</strong> contacto@ejemplo.com</li>
+            <li><strong>Teléfono:</strong> (000) 000 0000</li>
+            <li><strong>Dirección:</strong> Calle 00 # 00-00, Ciudad</li>
+          </ul>
         </div>
-
-        <div class="rules-grid">
-          <div class="rule-box">
-            <div class="rule-number">01</div>
-            <div class="rule-content">
-              <h3>Límite de 3 Ejemplares</h3>
-              <p>Cada socio puede tener un máximo de <strong>3 libros en préstamo simultáneo</strong>. Si alcanzas este límite, debes retornar al menos un título antes de solicitar otro.</p>
-            </div>
+        <form class="form" id="form-contacto" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required aria-describedby="nombre-error">
+            <p class="field__error" id="nombre-error" aria-live="polite"></p>
           </div>
-
-          <div class="rule-box">
-            <div class="rule-number">02</div>
-            <div class="rule-content">
-              <h3>Plazo de 14 Días Calendario</h3>
-              <p>El período estándar de préstamo es de <strong>14 días continuos</strong> a partir de la fecha de retiro. Puedes consultar la fecha límite en tu comprobante.</p>
-            </div>
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required aria-describedby="correo-error">
+            <p class="field__error" id="correo-error" aria-live="polite"></p>
           </div>
-
-          <div class="rule-box">
-            <div class="rule-number">03</div>
-            <div class="rule-content">
-              <h3>Política Estricta Cero Mora</h3>
-              <p>Si tienes <strong>algún libro con fecha de devolución vencida</strong>, el sistema bloquea automáticamente nuevas solicitudes hasta que el material sea devuelto en sala.</p>
-            </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required aria-describedby="mensaje-error"></textarea>
+            <p class="field__error" id="mensaje-error" aria-live="polite"></p>
           </div>
-
-          <div class="rule-box">
-            <div class="rule-number">04</div>
-            <div class="rule-content">
-              <h3>Afiliación Inmediata y Gratuita</h3>
-              <p>Solo requieres presentar tu documento de identidad en el mostrador central. Tu registro se completa en minutos y te habilita para todo el catálogo.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Libros Destacados (Datos Estáticos) -->
-    <section id="destacados" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Muestra de Catálogo</span>
-          <h2 class="section-title">Obras Representativas</h2>
-          <p class="section-desc">Una muestra de las categorías y títulos clásicos disponibles en nuestras estanterías.</p>
-        </div>
-
-        <div class="books-grid">
-          <article class="card book-card">
-            <div class="book-cover-mock cover-novela">
-              <span>Novela</span>
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Novela</span>
-              <h3 class="book-title">Cien años de soledad</h3>
-              <p class="book-author">Gabriel García Márquez</p>
-              <p class="book-isbn">ISBN: 9780307474728</p>
-            </div>
-          </article>
-
-          <article class="card book-card">
-            <div class="book-cover-mock cover-ciencia">
-              <span>Ciencia</span>
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Ciencia</span>
-              <h3 class="book-title">Cosmos</h3>
-              <p class="book-author">Carl Sagan</p>
-              <p class="book-isbn">ISBN: 9788408053934</p>
-            </div>
-          </article>
-
-          <article class="card book-card">
-            <div class="book-cover-mock cover-tecno">
-              <span>Tecnología</span>
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Tecnología</span>
-              <h3 class="book-title">Clean Code</h3>
-              <p class="book-author">Robert C. Martin</p>
-              <p class="book-isbn">ISBN: 9780132350884</p>
-            </div>
-          </article>
-
-          <article class="card book-card">
-            <div class="book-cover-mock cover-historia">
-              <span>Historia</span>
-            </div>
-            <div class="book-body">
-              <span class="book-tag">Historia</span>
-              <h3 class="book-title">Sapiens</h3>
-              <p class="book-author">Yuval Noah Harari</p>
-              <p class="book-isbn">ISBN: 9788499926223</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Horarios y Contacto -->
-    <section id="horarios" class="section section-alt">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Visítanos</span>
-          <h2 class="section-title">Horarios de Apertura y Ubicación</h2>
-          <p class="section-desc">Planifica tu visita a nuestras salas y módulos de circulación.</p>
-        </div>
-
-        <div class="info-grid">
-          <div class="card info-card">
-            <h3>⏰ Horarios de Atención</h3>
-            <ul class="info-list">
-              <li>
-                <strong>Lunes a Viernes:</strong>
-                <span>8:00 a. m. – 6:00 p. m. (Jornada continua)</span>
-              </li>
-              <li>
-                <strong>Sábados:</strong>
-                <span>9:00 a. m. – 1:00 p. m. (Atención general)</span>
-              </li>
-              <li>
-                <strong>Domingos y Festivos:</strong>
-                <span>Cerrado (Inventario y mantenimiento)</span>
-              </li>
-            </ul>
-          </div>
-
-          <div id="contacto" class="card info-card">
-            <h3>📍 Sede y Contacto</h3>
-            <ul class="info-list">
-              <li>
-                <strong>Dirección:</strong>
-                <span>Av. Principal # 45-12, Edificio Central de Aprendizaje</span>
-              </li>
-              <li>
-                <strong>Atención Telefónica:</strong>
-                <span>+57 (601) 555-0199</span>
-              </li>
-              <li>
-                <strong>Correo Electrónico:</strong>
-                <span>contacto@managerlibrary.local</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+          <button class="btn btn--green" type="submit">Enviar mensaje</button>
+          <p class="form__success" id="form-exito" role="status" hidden>Mensaje listo. Esta es una demostración: no se envió ningún dato.</p>
+        </form>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div>
-        <p class="footer-title">Manager Library</p>
-        <p class="footer-text">Sistema de Gestión Bibliotecaria bajo Metodología SDD · ADSO 3413974</p>
-      </div>
-      <p class="footer-copy">© 2026 Manager Library. Sitio público informativo sin dependencias de API interna.</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; <span id="anio">2026</span> Manager Library. Prueba técnica SDD, Ficha ADSO 3413974.</p>
+      <ul class="site-footer__links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#libros">Libros</a></li>
+        <li><a href="#asociarse">Asociarse</a></li>
+        <li><a href="#horarios">Horarios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </div>
   </footer>
+
+  <a class="to-top" href="#inicio" id="volver-arriba" aria-label="Volver arriba" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5l-7 7h4v7h6v-7h4z" fill="currentColor"/></svg>
+  </a>
 
   <script src="assets/js/main.js"></script>
 </body>
