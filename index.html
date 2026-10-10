@@ -1,146 +1,260 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biblioteca Central · Manager Library</title>
+  <meta name="description" content="Portal público oficial de Manager Library. Conoce nuestros servicios bibliotecarios, políticas de préstamos y colecciones destacadas.">
+  <title>Manager Library · Portal Público de la Comunidad</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Encabezado y Navegación -->
+  <!-- Navegación y Encabezado -->
   <header class="header">
-    <div class="container nav">
-      <div class="logo">
-        📖 Manager Library
-      </div>
-      <ul class="nav-menu">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#destacados" class="nav-link">Libros Destacados</a></li>
-        <li><a href="#horarios" class="nav-link">Horarios</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-      </ul>
+    <div class="container nav-container">
+      <a href="#inicio" class="logo" aria-label="Manager Library inicio">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+          <path d="M6 6h10"></path>
+          <path d="M6 10h10"></path>
+        </svg>
+        <span>Manager Library</span>
+      </a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#reglamento" class="nav-link">Reglamento y Socios</a></li>
+          <li><a href="#destacados" class="nav-link">Libros de Muestra</a></li>
+          <li><a href="#horarios" class="nav-link">Horarios</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="inicio" class="hero">
-    <div class="container">
-      <span class="hero-badge">Portal Oficial de la Comunidad</span>
-      <h1 class="hero-title">Tu Espacio de Lectura, Conocimiento e Innovación</h1>
-      <p class="hero-subtitle">
-        Accede a miles de títulos organizados por categoría, participa en nuestros clubes de lectura y disfruta del préstamo ágil de libros.
-      </p>
-      <a href="#destacados" class="hero-cta">Explorar Catálogo de Muestra</a>
-    </div>
-  </section>
-
-  <!-- Presentación y Servicios -->
-  <section id="servicios" class="section">
-    <div class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
-      <p class="section-desc">Diseñados para acercar la literatura y la formación a todos los miembros de nuestra comunidad.</p>
-
-      <div class="grid-3">
-        <div class="feature-card">
-          <div class="feature-icon">📚</div>
-          <h3 class="feature-title">Préstamo de Colecciones</h3>
-          <p>Lleva hasta 3 libros a casa durante 14 días renovables según disponibilidad y mantén tu hábito de lectura siempre activo.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <h3 class="feature-title">Catálogo Dinámico</h3>
-          <p>Clasificación técnica en cinco grandes áreas del saber: Novela, Ciencia, Tecnología, Historia y Literatura Infantil.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🏛️</div>
-          <h3 class="feature-title">Salas de Estudio Silencioso</h3>
-          <p>Espacios confortables, climatizados y equipados con conectividad para estudiantes, investigadores y público general.</p>
+  <main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+      <div class="container hero-container">
+        <span class="badge">Portal Oficial de la Comunidad</span>
+        <h1 class="hero-title">Espacio Público de Lectura, Cultura y Aprendizaje</h1>
+        <p class="hero-subtitle">
+          Promovemos el acceso democrático a la cultura y la investigación. Descubre nuestra colección literaria, consulta en sala y solicita préstamos para disfrutar en casa.
+        </p>
+        <div class="hero-actions">
+          <a href="#reglamento" class="btn btn-primary">Cómo Solicitar Libros</a>
+          <a href="#destacados" class="btn btn-outline">Ver Colecciones</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Muestra de Libros Destacados -->
-  <section id="destacados" class="section" style="background-color: #f1f5f9;">
-    <div class="container">
-      <h2 class="section-title">Colecciones Destacadas</h2>
-      <p class="section-desc">Una muestra de las obras más solicitadas por nuestros lectores esta temporada.</p>
+    <!-- Servicios -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Atención al Ciudadano</span>
+          <h2 class="section-title">Servicios Bibliotecarios Gratuitos</h2>
+          <p class="section-desc">Diseñados para investigadores, estudiantes y apasionados por las letras en todas las etapas.</p>
+        </div>
 
-      <div class="books-grid">
-        <div class="book-preview-card">
-          <div class="book-cover">📖</div>
-          <div class="book-info">
-            <div class="book-cat">Novela</div>
-            <div class="book-name">Cien años de soledad</div>
-            <div class="book-author">Gabriel García Márquez</div>
-          </div>
+        <div class="grid-3">
+          <article class="card service-card">
+            <div class="service-icon">📖</div>
+            <h3 class="card-title">Préstamo Domiciliario</h3>
+            <p>Retira ejemplares para leer en tu hogar con un proceso ágil. Dispones de hasta 14 días calendario para disfrutar de cada obra.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-icon">🏛️</div>
+            <h3 class="card-title">Salas de Lectura y Estudio</h3>
+            <p>Ambientes climatizados y silenciosos equipados con puestos individuales y conectividad para potenciar tu concentración.</p>
+          </article>
+
+          <article class="card service-card">
+            <div class="service-icon">🔍</div>
+            <h3 class="card-title">Asesoría de Búsqueda</h3>
+            <p>Personal bibliotecario especializado para orientarte en la localización de fuentes bibliográficas y referencias académicas.</p>
+          </article>
         </div>
-        <div class="book-preview-card">
-          <div class="book-cover">🔬</div>
-          <div class="book-info">
-            <div class="book-cat">Ciencia</div>
-            <div class="book-name">Cosmos</div>
-            <div class="book-author">Carl Sagan</div>
-          </div>
+      </div>
+    </section>
+
+    <!-- Reglamento de Préstamos y Cómo Asociarse -->
+    <section id="reglamento" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Políticas Transparentes</span>
+          <h2 class="section-title">Reglas Clave de Préstamo y Membresía</h2>
+          <p class="section-desc">Nuestro sistema de circulación se rige por normas claras para garantizar el acceso equitativo a todos los usuarios.</p>
         </div>
-        <div class="book-preview-card">
-          <div class="book-cover">💻</div>
-          <div class="book-info">
-            <div class="book-cat">Tecnología</div>
-            <div class="book-name">Clean Code</div>
-            <div class="book-author">Robert C. Martin</div>
+
+        <div class="rules-grid">
+          <div class="rule-box">
+            <div class="rule-number">01</div>
+            <div class="rule-content">
+              <h3>Límite de 3 Ejemplares</h3>
+              <p>Cada socio puede tener un máximo de <strong>3 libros en préstamo simultáneo</strong>. Si alcanzas este límite, debes retornar al menos un título antes de solicitar otro.</p>
+            </div>
           </div>
-        </div>
-        <div class="book-preview-card">
-          <div class="book-cover">📜</div>
-          <div class="book-info">
-            <div class="book-cat">Historia</div>
-            <div class="book-name">Sapiens: De animales a dioses</div>
-            <div class="book-author">Yuval Noah Harari</div>
+
+          <div class="rule-box">
+            <div class="rule-number">02</div>
+            <div class="rule-content">
+              <h3>Plazo de 14 Días Calendario</h3>
+              <p>El período estándar de préstamo es de <strong>14 días continuos</strong> a partir de la fecha de retiro. Puedes consultar la fecha límite en tu comprobante.</p>
+            </div>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-number">03</div>
+            <div class="rule-content">
+              <h3>Política Estricta Cero Mora</h3>
+              <p>Si tienes <strong>algún libro con fecha de devolución vencida</strong>, el sistema bloquea automáticamente nuevas solicitudes hasta que el material sea devuelto en sala.</p>
+            </div>
+          </div>
+
+          <div class="rule-box">
+            <div class="rule-number">04</div>
+            <div class="rule-content">
+              <h3>Afiliación Inmediata y Gratuita</h3>
+              <p>Solo requieres presentar tu documento de identidad en el mostrador central. Tu registro se completa en minutos y te habilita para todo el catálogo.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Horarios y Ubicación -->
-  <section id="horarios" class="section">
-    <div class="container">
-      <h2 class="section-title">Horarios de Atención</h2>
-      <p class="section-desc">Planifica tu visita a nuestras instalaciones centrales.</p>
+    <!-- Libros Destacados (Datos Estáticos) -->
+    <section id="destacados" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Muestra de Catálogo</span>
+          <h2 class="section-title">Obras Representativas</h2>
+          <p class="section-desc">Una muestra de las categorías y títulos clásicos disponibles en nuestras estanterías.</p>
+        </div>
 
-      <div class="schedule-box">
-        <div class="schedule-item">
-          <h4>Lunes a Viernes</h4>
-          <p><strong>8:00 a. m. – 6:00 p. m.</strong></p>
-          <p style="color: var(--gray); font-size: 0.9rem;">Préstamos, devoluciones y salas de lectura.</p>
-        </div>
-        <div class="schedule-item">
-          <h4>Sábados</h4>
-          <p><strong>9:00 a. m. – 1:00 p. m.</strong></p>
-          <p style="color: var(--gray); font-size: 0.9rem;">Actividades culturales y préstamos rápidos.</p>
-        </div>
-        <div class="schedule-item">
-          <h4>Domingos y Festivos</h4>
-          <p><strong>Cerrado</strong></p>
-          <p style="color: var(--gray); font-size: 0.9rem;">Mantenimiento e inventario técnico.</p>
+        <div class="books-grid">
+          <article class="card book-card">
+            <div class="book-cover-mock cover-novela">
+              <span>Novela</span>
+            </div>
+            <div class="book-body">
+              <span class="book-tag">Novela</span>
+              <h3 class="book-title">Cien años de soledad</h3>
+              <p class="book-author">Gabriel García Márquez</p>
+              <p class="book-isbn">ISBN: 9780307474728</p>
+            </div>
+          </article>
+
+          <article class="card book-card">
+            <div class="book-cover-mock cover-ciencia">
+              <span>Ciencia</span>
+            </div>
+            <div class="book-body">
+              <span class="book-tag">Ciencia</span>
+              <h3 class="book-title">Cosmos</h3>
+              <p class="book-author">Carl Sagan</p>
+              <p class="book-isbn">ISBN: 9788408053934</p>
+            </div>
+          </article>
+
+          <article class="card book-card">
+            <div class="book-cover-mock cover-tecno">
+              <span>Tecnología</span>
+            </div>
+            <div class="book-body">
+              <span class="book-tag">Tecnología</span>
+              <h3 class="book-title">Clean Code</h3>
+              <p class="book-author">Robert C. Martin</p>
+              <p class="book-isbn">ISBN: 9780132350884</p>
+            </div>
+          </article>
+
+          <article class="card book-card">
+            <div class="book-cover-mock cover-historia">
+              <span>Historia</span>
+            </div>
+            <div class="book-body">
+              <span class="book-tag">Historia</span>
+              <h3 class="book-title">Sapiens</h3>
+              <p class="book-author">Yuval Noah Harari</p>
+              <p class="book-isbn">ISBN: 9788499926223</p>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pie de Página -->
-  <footer id="contacto" class="footer">
-    <div class="container">
-      <h3 style="color: white; margin-bottom: 8px;">Manager Library · Red de Bibliotecas</h3>
-      <p>Centro de Formación e Innovación · SENA ADSO Ficha 3413974</p>
-      <p class="footer-copy">
-        © 2026 Manager Library. Todos los derechos reservados. Sitio estático de presentación informativa.
-      </p>
+    <!-- Horarios y Contacto -->
+    <section id="horarios" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Visítanos</span>
+          <h2 class="section-title">Horarios de Apertura y Ubicación</h2>
+          <p class="section-desc">Planifica tu visita a nuestras salas y módulos de circulación.</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="card info-card">
+            <h3>⏰ Horarios de Atención</h3>
+            <ul class="info-list">
+              <li>
+                <strong>Lunes a Viernes:</strong>
+                <span>8:00 a. m. – 6:00 p. m. (Jornada continua)</span>
+              </li>
+              <li>
+                <strong>Sábados:</strong>
+                <span>9:00 a. m. – 1:00 p. m. (Atención general)</span>
+              </li>
+              <li>
+                <strong>Domingos y Festivos:</strong>
+                <span>Cerrado (Inventario y mantenimiento)</span>
+              </li>
+            </ul>
+          </div>
+
+          <div id="contacto" class="card info-card">
+            <h3>📍 Sede y Contacto</h3>
+            <ul class="info-list">
+              <li>
+                <strong>Dirección:</strong>
+                <span>Av. Principal # 45-12, Edificio Central de Aprendizaje</span>
+              </li>
+              <li>
+                <strong>Atención Telefónica:</strong>
+                <span>+57 (601) 555-0199</span>
+              </li>
+              <li>
+                <strong>Correo Electrónico:</strong>
+                <span>contacto@managerlibrary.local</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div>
+        <p class="footer-title">Manager Library</p>
+        <p class="footer-text">Sistema de Gestión Bibliotecaria bajo Metodología SDD · ADSO 3413974</p>
+      </div>
+      <p class="footer-copy">© 2026 Manager Library. Sitio público informativo sin dependencias de API interna.</p>
     </div>
   </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
